@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:ecommerce_app/horizontal_listview.dart';
 
 void main() => runApp(MaterialApp(
       home: HomePage(),
@@ -23,8 +24,8 @@ class _HomePageState extends State<HomePage> {
           AssetImage('images/m1.jpeg'),
           AssetImage('images/m2.jpg'),
           AssetImage('images/w1.jpeg'),
-          AssetImage('images/w2.jpeg'),
-          AssetImage('images/w3.jpeg')
+          AssetImage('images/w3.jpeg'),
+          AssetImage('images/w4.jpeg')
         ],
         autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
@@ -145,7 +146,25 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: ListView(
-        children: <Widget>[image_carousel],
+        children: <Widget>[
+          //region carousel
+          image_carousel,
+          //endregion
+
+          //region padding
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "Categories",
+              style: TextStyle(color: Colors.black87),
+            ),
+          ),
+          //endregion
+
+          //region horizontal listView for categories
+          HorizontalListView()
+          //endregion
+        ],
       ),
     );
   }
