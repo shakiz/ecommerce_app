@@ -151,18 +151,35 @@ class _HomePageState extends State<HomePage> {
           image_carousel,
           //endregion
 
-          //region padding
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "Categories",
-              style: TextStyle(color: Colors.black87),
+          //region padding and category text
+          Container(
+            margin: EdgeInsets.only(left: 2, top: 8),
+            child: Padding(
+              padding: EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Text(
+                "Categories",
+                style: TextStyle(color: Colors.black87, fontSize: 16),
+              ),
             ),
           ),
           //endregion
 
           //region horizontal listView for categories
-          HorizontalListView()
+          Container(
+              margin: EdgeInsets.only(top: 4), child: HorizontalListView()),
+          //endregion
+
+          //region padding and recent product text
+          Container(
+            margin: EdgeInsets.only(left: 2, top: 8),
+            child: Padding(
+              padding: EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Text(
+                "Recent Products",
+                style: TextStyle(color: Colors.black87, fontSize: 16),
+              ),
+            ),
+          ),
           //endregion
         ],
       ),

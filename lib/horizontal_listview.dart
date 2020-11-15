@@ -4,7 +4,7 @@ class HorizontalListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 88,
+      height: 72,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
@@ -44,20 +44,28 @@ class ItemCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 96,
-      child: Padding(
-        padding: EdgeInsets.all(2.0),
-        child: InkWell(
-          onTap: () {},
-          child: ListTile(
-            title: Image.asset(
-              image_location,
-              height: 96,
-              width: 96,
-            ),
-            subtitle: Container(
-              alignment: Alignment.topCenter,
-              child: Text(image_caption),
+      margin: EdgeInsets.only(left: 8, bottom: 4, right: 8),
+      width: 108,
+      child: Align(
+        alignment: Alignment.topCenter,
+        child: Card(
+          elevation: 4,
+          child: Container(
+            margin: EdgeInsets.only(top: 4),
+            child: InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Image.asset(
+                  image_location,
+                  width: 108,
+                  height: 32,
+                  alignment: Alignment.center,
+                ),
+                subtitle: Align(
+                  alignment: Alignment.topCenter,
+                  child: Text(image_caption),
+                ),
+              ),
             ),
           ),
         ),
