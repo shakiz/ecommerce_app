@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:ecommerce_app/horizontal_listview.dart';
+import 'package:ecommerce_app/ux_utils/horizontal_listview.dart';
+import 'package:ecommerce_app/ux_utils/gridview_recent_products.dart';
 
 void main() => runApp(MaterialApp(
       home: HomePage(),
@@ -180,6 +181,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          //endregion
+
+          //region gridView of recent products
+          Container(
+              margin: EdgeInsets.only(top: 4), child: GridViewRecentProducts()),
           //endregion
         ],
       ),
