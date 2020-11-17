@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:ecommerce_app/ux_utils/horizontal_listview.dart';
@@ -16,19 +17,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    Widget image_carousel = Container(
+    Widget imageCarousel = Container(
       height: 200,
       child: Carousel(
         boxFit: BoxFit.cover,
         images: [
+          AssetImage('images/w3.jpeg'),
           AssetImage('images/c1.jpg'),
           AssetImage('images/m1.jpeg'),
           AssetImage('images/m2.jpg'),
           AssetImage('images/w1.jpeg'),
-          AssetImage('images/w3.jpeg'),
           AssetImage('images/w4.jpeg')
         ],
         autoplay: false,
+        dotBgColor: Colors.grey,
         animationCurve: Curves.fastOutSlowIn,
         animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
@@ -147,9 +149,10 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: ListView(
+        scrollDirection: Axis.vertical,
         children: <Widget>[
           //region carousel
-          image_carousel,
+          imageCarousel,
           //endregion
 
           //region padding and category text
